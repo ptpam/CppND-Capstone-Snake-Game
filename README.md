@@ -37,7 +37,7 @@ Introduced clear and logical loops and functions, akin to a well-organized recip
 ### 🎨 Object-Oriented Programming
 Introduced new classes with appropriate access specifiers and methods, adhering to a structured organization for better code management.
 Established a rational inheritance hierarchy among classes, with virtual and override functions enhancing the code's extensibility.
-Utilized templates and overloaded functions strategically to offer flexibility in code application, resembling a versatile toolkit.
+Utilized overloaded functions strategically to offer flexibility in code application, resembling a versatile toolkit.
 ### 🌐 Memory Management 
 Integrated destructors appropriately, aligning with the Resource Acquisition Is Initialization (RAII) pattern for efficient resource management. Implemented all aspects of the Rule of 5, emphasizing move semantics for optimized data handling. Incorporated references judiciously for smooth data access, avoiding the complexities associated with raw pointers.
 ### 🔐  Concurrency 
