@@ -11,6 +11,12 @@ class Game
 {
 public:
   Game(std::size_t grid_width, std::size_t grid_height);
+  Game(const Game &other) = default;            // Copy constructor
+  Game &operator=(const Game &other) = default; // Copy assignment operator
+  Game(Game &&other) = default;                 // Move constructor
+  Game &operator=(Game &&other) = default;      // Move assignment operator
+  ~Game() = default;                            // Destructor
+
   void Run(Controller const &controller, Renderer &renderer,
            std::size_t target_frame_duration);
   int GetScore() const;

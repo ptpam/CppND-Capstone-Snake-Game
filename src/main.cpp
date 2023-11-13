@@ -12,25 +12,28 @@ int main()
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  Controller controller;
-  Game game(kGridWidth, kGridHeight);
-
   // Get user name
   std::string playerName;
   std::cout << "Enter your name: ";
   std::getline(std::cin, playerName);
 
-  game.Run(controller, renderer, kMsPerFrame);
+  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  Controller controller;
 
-  // Save score
-  game.SaveScore(playerName);
+  {
+    Game game(kGridWidth, kGridHeight);
+    game.Run(controller, renderer, kMsPerFrame);
 
-  // Display top 10 players
-  game.DisplayTopPlayers();
+    // Save score
+    game.SaveScore(playerName);
 
-  std::cout << "Game has terminated successfully!\n";
-  std::cout << "Score: " << game.GetScore() << "\n";
-  std::cout << "Size: " << game.GetSize() << "\n";
+    // Display top 10 players
+    game.DisplayTopPlayers();
+
+    std::cout << "Game has terminated successfully!\n";
+    std::cout << "Score: " << game.GetScore() << "\n";
+    std::cout << "Size: " << game.GetSize() << "\n";
+  }
+
   return 0;
 }
