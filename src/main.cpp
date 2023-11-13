@@ -3,7 +3,8 @@
 #include "game.h"
 #include "renderer.h"
 
-int main() {
+int main()
+{
   constexpr std::size_t kFramesPerSecond{60};
   constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};
   constexpr std::size_t kScreenWidth{640};
@@ -14,7 +15,20 @@ int main() {
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
   Game game(kGridWidth, kGridHeight);
+
+  // Get user name
+  std::string playerName;
+  std::cout << "Enter your name: ";
+  std::getline(std::cin, playerName);
+
   game.Run(controller, renderer, kMsPerFrame);
+
+  // Save score
+  game.SaveScore(playerName);
+
+  // Display top 10 players
+  game.DisplayTopPlayers();
+
   std::cout << "Game has terminated successfully!\n";
   std::cout << "Score: " << game.GetScore() << "\n";
   std::cout << "Size: " << game.GetSize() << "\n";
