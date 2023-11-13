@@ -7,6 +7,9 @@
 #include "renderer.h"
 #include "snake.h"
 
+#include <thread>
+#include <mutex>
+
 class Game
 {
 public:
@@ -45,6 +48,14 @@ private:
   void PlaceFood();
   void Update();
   void LoadScoresFromFile(); // Added function to load scores from file
+
+  // Mutex for synchronizing access to game state
+  std::mutex mutex;
+
+  // Function to update the game state in a separate thread
+  void UpdateThread(std::size_t target_frame_duration);
+  // Flag to signal the game thread to exit
+  bool running{true};
 };
 
 #endif
