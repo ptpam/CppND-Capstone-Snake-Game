@@ -26,10 +26,27 @@ In this project, you can build your own C++ application or extend this Snake gam
 ## Basic Build Instructions
 
 1. Clone this repo.
-2. Make a build directory in the top level directory: `mkdir build && cd build`
-3. Compile: `cmake .. && make`
-4. Run it: `./SnakeGame`.
+2. To clean the bulid directory `make clean`
+3. Compile: `make build`
+4. Run it: `./build/SnakeGame`.
 
+## Changes made
+
+### 📤 Loops, Functions, I/O 
+Introduced clear and logical loops and functions, akin to a well-organized recipe for better code comprehension. Enabled efficient data reading from files, emphasizing a structured narrative. Additionally, implemented user-friendly input prompts for smoother interactions.
+### 🎨 Object-Oriented Programming
+Introduced new classes with appropriate access specifiers and methods, adhering to a structured organization for better code management.
+Established a rational inheritance hierarchy among classes, with virtual and override functions enhancing the code's extensibility.
+Utilized templates and overloaded functions strategically to offer flexibility in code application, resembling a versatile toolkit.
+### 🌐 Memory Management 
+Integrated destructors appropriately, aligning with the Resource Acquisition Is Initialization (RAII) pattern for efficient resource management. Implemented all aspects of the Rule of 5, emphasizing move semantics for optimized data handling. Incorporated references judiciously for smooth data access, avoiding the complexities associated with raw pointers.
+### 🔐  Concurrency 
+Introduced multithreading components, allowing parallel execution for improved performance and responsiveness. Implemented mutex strategically to synchronize thread execution, ensuring data integrity in a multi-threaded environment.
+
+🚀 Program Grand Finale:
+* The program starts by prompting the user for their name.
+* The game terminates when the snake is not alive or if the user presses ESC.
+* Scores are saved into a file, and the top 10 players are displayed at the end.
 
 ## CC Attribution-ShareAlike 4.0 International
 
